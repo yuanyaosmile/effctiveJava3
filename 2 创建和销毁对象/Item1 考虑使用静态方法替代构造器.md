@@ -50,7 +50,7 @@ public static Boolean valueOf(boolean b) {
 >
 > Prior to Java 8, interfaces couldn’t have static methods. By convention, static factory methods for an interface named *Type* were put in a noninstantiable companion class(Item 4) named *Types*. For example, the Java Collections Framework has forty-five utility implementations of its interfaces, providing unmodifiable collections, synchronized collections, and the like. Nearly all of these implementations are exported via static factory methods in one noninstantiable class (java.util.Collections). The classes of the returned objects are all nonpublic.
 
-静态工厂方法的第三个优点是可以返回原返回类型的任意子类型对象，而构造器不行。这个优点让我们可以更加灵活的选择类的返回对象。
+**静态工厂方法的第三个优点是可以返回原返回类型的任意子类型对象，而构造器不行。** 这个优点让我们可以更加灵活的选择类的返回对象。
 
 这种灵活性的一个应用场景是，API可以返回一个对象，而该对象的类可以是非公有的。在这种情况下，影藏具体的实现类可以使得API更加简洁。这种技术适用于基于接口的框架，静态工厂方法的返回类型为接口类型，而实际返回对象为具体的实现类。
 
