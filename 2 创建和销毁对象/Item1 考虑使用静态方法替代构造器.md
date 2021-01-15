@@ -70,7 +70,7 @@ public static Boolean valueOf(boolean b) {
 >
 >The existence of these two implementation classes is invisible to clients. If *RegularEnumSet* ceased to offer performance advantages for small enum types, it could be eliminated from a future release with no ill effects. Similarly, a future release could add a third or fourth implementation of *EnumSet* if it proved beneficial for performance. Clients neither know nor care about the class of the object they get back from the factory; they care only that it is some subclass of *EnumSet*.
 
-**静态工厂方法的第四个优势是，可以根据传入的参数返回不同类型的对象。**返回对象类型可以是声明的返回类型的任意子类型。返回对象的类型也可以根据发行版本的不同而不同。
+**静态工厂方法的第四个优势是，可以根据传入的参数返回不同类型的对象。** 返回对象类型可以是声明的返回类型的任意子类型。返回对象的类型也可以根据发行版本的不同而不同。
 
 EnumSet类(Item36)没有公有的构造器，只有静态工厂方法，在OpenJDK的实现中，其静态工厂方法会根据底层枚举类型的大小来返回两个子类中的一个实例。如果该枚举类和大多数实例一样，包含的元素少于或等于64个，那么其静态工厂方法将会返回一个 由单个long支持的RegularEnumSet实例；否则，将返回一个有long数组支持的JumboEnumSet实例。
 
@@ -96,7 +96,7 @@ EnumSet类(Item36)没有公有的构造器，只有静态工厂方法，在OpenJ
 >
 > **A second shortcoming of static factory methods is that they are hard for programmers to find.** They do not stand out in API documentation in the way that constructors do, so it can be difficult to figure out how to instantiate a class that provides static factory methods instead of constructors. The Javadoc tool may someday draw attention to static factory methods. In the meantime, you can reduce this problem by drawing attention to static factories in class or interface documentation and by adhering to common naming conventions. Here are some common names for static factory methods. This list is far from exhaustive:
 
-**静态工厂方法主要的不足在于没有公有或者受保护的构造器的类不能子类化。**比如，在集合框架中，所有的便利实现都不能拥有子类。但这也鼓励程序员使用组合代替继承(Item18)，并且这也是不可变类型所需要的，因此也算是因祸得福了。
+**静态工厂方法主要的不足在于没有公有或者受保护的构造器的类不能子类化。** 比如，在集合框架中，所有的便利实现都不能拥有子类。但这也鼓励程序员使用组合代替继承(Item18)，并且这也是不可变类型所需要的，因此也算是因祸得福了。
 
 **静态工厂方法的另一个不足在于程序员很难找到他们。** 因为静态工厂方法不会像狗再起一样在API文档中标注出来。导致难以知道如何去初始化一个只提供静态工厂方法的类。Javadoc工具在未来可能会加标注在静态工厂方法上。同时，你可以多注意类和接口文档里的静态工厂方法，并且遵守通用的命名规则来减少这种问题。下面列举了一部分通用的静态工厂方法的名字。
 
