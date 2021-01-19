@@ -27,7 +27,7 @@
 
 **当其父类已经覆盖了equals方法，并且父类的行为也适用的类**。比如，大部分的Set实现类都从AbstractSet那里继承了equals实现，List实现类从AbstractList继承equals实现，Map实现类从AbstractMap继承equals实现。
 
-**私有或者包级私有，你确定它的equals方法不会被调用的类**。如果你非常不想貌相，你可以像下面这样覆盖equals方法，以防止被意外的调用。
+**私有或者包级私有，你确定它的equals方法不会被调用的类**。如果你非常不想冒险，你可以像下面这样覆盖equals方法，以防止被意外的调用。
 
 ```java
 @Override public boolean equals(Object o) {
