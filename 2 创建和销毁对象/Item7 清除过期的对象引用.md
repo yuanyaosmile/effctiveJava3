@@ -87,10 +87,10 @@ public Object pop() {
 
 更常见的情况是，“缓存项的生命周期是否有意义”很难去定义，随着时间的推移，缓存项变得越来越没有价值。在这种情况下，缓存应该时不时地清除没用的项。这个清除的操作可以放在一个后台线程里（比如ScheduledHashMap里)，或者在往缓存里放新的元素时进行清除操作。LinkedHashMap提供了一个removeEldestEntry方法可以很容易的实现这一操作。对于一些更加复杂的缓存，你可以直接使用java.lang.ref。
 
-> **A third common source of memory leaks is listeners and other callbacks.**If you implement an API where clients register callbacks but don’t deregister them explicitly, they will accumulate unless you take some action. One way to ensure that callbacks are garbage collected promptly is to store only *weak references* to them, for instance, by storing them only as keys in a WeakHashMap.
+> **A third common source of memory leaks is listeners and other callbacks.** If you implement an API where clients register callbacks but don’t deregister them explicitly, they will accumulate unless you take some action. One way to ensure that callbacks are garbage collected promptly is to store only *weak references* to them, for instance, by storing them only as keys in a WeakHashMap.
 >
 > Because memory leaks typically do not manifest themselves as obvious failures, they may remain present in a system for years. They are typically discovered only as a result of careful code inspection or with the aid of a debugging tool known as a *heap profiler*. Therefore, it is very desirable to learn to anticipate problems like this before they occur and prevent them from happening.
 
-**第三种常见的内存泄露的来源是监听器和其他回调。**如果你实现了一个用于客户端注册回调的api，但是又没有显示地注销掉，那么除非你采取一些办法，否则这些回调就会堆积起来。一种保证这些回调会被及时垃圾回收的方法是值使用弱引用（weak reference）进行保存，比如，使用WeakHashMap的key进行保存。
+**第三种常见的内存泄露的来源是监听器和其他回调。** 如果你实现了一个用于客户端注册回调的api，但是又没有显示地注销掉，那么除非你采取一些办法，否则这些回调就会堆积起来。一种保证这些回调会被及时垃圾回收的方法是值使用弱引用（weak reference）进行保存，比如，使用WeakHashMap的key进行保存。
 
 内存泄漏不会表现为明显的失败，因此他们可以在一个系统里存在很多年。往往只能通过特别细致的代码检查，或者借助一个叫堆分析器（heap profiler）的工具才能发现内存泄露问题。因此，学会在内存泄露之前就预测到问题并解决问题是非常好的。
