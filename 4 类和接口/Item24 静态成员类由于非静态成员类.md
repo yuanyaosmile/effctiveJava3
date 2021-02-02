@@ -1,4 +1,4 @@
-### Item24 静态成员类由于非静态成员类
+### Item24 静态成员类优于非静态成员类
 
 > A *nested class* is a class defined within another class. A nested class should exist only to serve its enclosing class. If a nested class would be useful in some other context, then it should be a top-level class. There are four kinds of nested classes: *static member classes*, *nonstatic member classes*, *anonymous classes*, and *local classes*. All but the first kind are known as *inner classes*. This item tells you when to use which kind of nested class and why.
 
