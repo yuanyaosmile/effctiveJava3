@@ -143,14 +143,14 @@ T extends Object declared in class Chooser
 ```java
 // List-based Chooser - typesafe
 public class Chooser<T> {
-		private final List<T> choiceList;
-		public Chooser(Collection<T> choices) { 
-				choiceList = new ArrayList<>(choices);
-		}
-		public T choose() {
-				Random rnd = ThreadLocalRandom.current();
-				return choiceList.get(rnd.nextInt(choiceList.size()));
-		} 
+	private final List<T> choiceList;
+	public Chooser(Collection<T> choices) { 
+			choiceList = new ArrayList<>(choices);
+	}
+	public T choose() {
+			Random rnd = ThreadLocalRandom.current();
+			return choiceList.get(rnd.nextInt(choiceList.size()));
+	} 
 }
 ```
 
