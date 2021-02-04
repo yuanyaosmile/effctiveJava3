@@ -1,8 +1,8 @@
 ### Item31 使用有限制的通配符来提升API的灵活性
 
-> As noted in Item 28, parameterized types are *invariant*. In other words, for any two distinct types Type1 and Type2, List<Type1> is neither a subtype nor a supertype of List<Type2>. Although it is counterintuitive that List<String> is not a subtype of List<Object>, it really does make sense. You can put any object into a List<Object>, but you can put only strings into a List<String>. Since a List<String> can’t do everything a List<Object> can, it isn’t a subtype (by the Liskov substitution principal, Item 10).
+> As noted in Item 28, parameterized types are *invariant*. In other words, for any two distinct types Type1 and Type2, List&lt;Type1&gt; is neither a subtype nor a supertype of List&lt;Type2&gt;. Although it is counterintuitive that List&lt;String&gt; is not a subtype of List&lt;Object&gt;, it really does make sense. You can put any object into a List&lt;Object&gt;, but you can put only strings into a List&lt;String&gt;. Since a List<String> can’t do everything a List&lt;Object&gt; can, it isn’t a subtype (by the Liskov substitution principal, Item 10).
 
-正如Item28里所讲的那样，参数化类型是非协变的。也就是说，对于任何两个不同的类型Type1和Type2。List<Type1>永远都不是List<Type2>的子类型或者父类型。虽然List<String>不是List<Object>的子类型是违反直觉的，但确实是有意义的。你可以往List<Object>里放所有的对象，但是只能往 List<String>里面放String对象。由于List<Stirng>不能做所有List<Object>可以做的事情，所有List<String>就不是List<Object>的子类型（里氏替换原则，Item10)。
+正如Item28里所讲的那样，参数化类型是非协变的。也就是说，对于任何两个不同的类型Type1和Type2。List&lt;Type1&gt;永远都不是List&lt;Type2&gt;的子类型或者父类型。虽然List&lt;String&gt;不是List&lt;Object&gt;的子类型是违反直觉的，但确实是有意义的。你可以往List&lt;Object&gt;里放所有的对象，但是只能往 List&lt;String&gt;里面放String对象。由于List&lt;Stirng&gt;不能做所有List&lt;Object&gt;可以做的事情，所有List&lt;String&gt;就不是List&lt;Object&gt;的子类型（里氏替换原则，Item10)。
 
 > Sometimes you need more flexibility than invariant typing can provide. Consider the Stack class from Item 29. To refresh your memory, here is its public API:
 
