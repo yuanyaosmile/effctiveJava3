@@ -61,7 +61,7 @@ public enum Orange { NAVEL, TEMPLE, BLOOD }
 
 > The basic idea behind Java’s enum types is simple: they are classes that export one instance for each enumeration constant via a public static final field. Enum types are effectively final, by virtue of having no accessible constructors. Because clients can neither create instances of an enum type nor extend it, there can be no instances but the declared enum constants. In other words, enum types are instance-controlled (page 6). They are a generalization of singletons (Item 3), which are essentially single-element enums.
 
-Java的Enum类型的基本想法很简单：他们就是使用公有静态final域为每一个枚举常量导出一个实例的类。Enum类型由于没有可以访问的构造器，Enum类型是真正的final类。由于客户端既不能穿件enum类型的实例，也不能继承enum类，因为除了它声明的枚举实例外，不会有其他的实例。也就是说，枚举类型是实例受控的（详见Item1）。它们是一组单例的集合（Item3），单例本质上是每个元素的枚举。
+Java的Enum类型的基本想法很简单：他们就是使用公有静态final域为每一个枚举常量导出一个实例的类。Enum类型由于没有可以访问的构造器，Enum类型是真正的final类。由于客户端既不能创建enum类型的实例，也不能继承enum类，因为除了它声明的枚举实例外，不会有其他的实例。也就是说，枚举类型是实例受控的（详见Item1）。它们是一组单例的集合（Item3），单例本质上是每个元素的枚举。
 
 > Enums provide compile-time type safety. If you declare a parameter to be of type Apple, you are guaranteed that any non-null object reference passed to the parameter is one of the three valid Apple values. Attempts to pass values of the wrong type will result in compile-time errors, as will attempts to assign an expression of one enum type to a variable of another, or to use the == operator to compare values of different enum types.
 
