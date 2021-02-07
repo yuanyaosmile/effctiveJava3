@@ -66,7 +66,8 @@ for (int i = 0; i < plantsByLifeCycle.length; i++) {
 上面的程序，使用Stream来管理map的话，还可以变得简短得多。下面是基于Stream的最简单的代码，基本复制了前面的例子的大部分行为：
 
 ```java
-// Naive stream-based approach - unlikely to produce an EnumMap! System.out.println(Arrays.stream(garden).collect(groupingBy(p -> p.lifeCycle)));
+// Naive stream-based approach - unlikely to produce an EnumMap! 
+   System.out.println(Arrays.stream(garden).collect(groupingBy(p -> p.lifeCycle)));
 ```
 
 > The problem with this code is that it chooses its own map implementation, and in practice it won’t be an EnumMap, so it won’t match the space and time performance of the version with the explicit EnumMap. To rectify this problem, use the three-parameter form of Collectors.groupingBy, which allows the caller to specify the map implementation using the mapFactory parameter:
