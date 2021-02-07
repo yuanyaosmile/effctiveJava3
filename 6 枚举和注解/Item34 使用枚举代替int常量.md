@@ -23,7 +23,7 @@ Java支持两种特殊用途的引用类型：一种是类，被称为枚举类�
 
 > This technique, known as the int *enum pattern,* has many shortcomings. It provides nothing in the way of type safety and little in the way of expressive power. The compiler won’t complain if you pass an apple to a method that expects an orange, compare apples to oranges with the == operator, or worse:
 
-这种技术，称为”int枚举模式“，有跟多的缺点。它完全没有提供类型安全的保证，表达能力也不强。当你把一个apple传递给一个需要orange的方法时，编译器也不会生成警告，还可以使用==来对apple和orange进行比较，甚至更糟糕：
+这种技术，称为”int枚举模式“，有很多的缺点。它完全没有提供类型安全的保证，表达能力也不强。当你把一个apple传递给一个需要orange的方法时，编译器也不会生成警告，还可以使用==来对apple和orange进行比较，甚至更糟糕：
 
 ```java
 // Tasty citrus flavored applesauce!
