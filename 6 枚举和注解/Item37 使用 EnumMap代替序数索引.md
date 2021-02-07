@@ -59,7 +59,7 @@ for (int i = 0; i < plantsByLifeCycle.length; i++) {
 
 > This program is shorter, clearer, safer, and comparable in speed to the original version. There is no unsafe cast; no need to label the output manually because the map keys are enums that know how to translate themselves to printable strings; and no possibility for error in computing array indices. The reason that EnumMap is comparable in speed to an ordinal-indexed array is that EnumMap uses such an array internally, but it hides this implementation detail from the programmer, combining the richness and type safety of a Map with the speed of an array. Note that the EnumMap constructor takes the Class object of the key type: this is a *bounded type token*, which provides runtime generic type information (Item 33).
 
-这个程序更简短，速度上也可以和之前的版本媲美。也没有不安全的转化，也不需要再输出的时候手动打标签，因为map的key就是枚举，它知道该怎么把自己转换成可打印的字符串，也不可能在计算数组索引时出现error。EnumMap的速度可以和“序数索引的数组”相媲美的原因在于，EnumMap内部也使用了类似的数组，但是它对程序员隐藏了这些实现细节。集map的丰富功能、类型安全 和 数组的速度于一身。需要注意的是，EnumMap凑早起需要一个其键类型的Class对象作为参数：这是一个无限制的类型令牌，提供了运行时的泛型类型信息（Item33）。
+这个程序更简短，速度上也可以和之前的版本媲美。也没有不安全的转化，也不需要再输出的时候手动打标签，因为map的key就是枚举，它知道该怎么把自己转换成可打印的字符串，也不可能在计算数组索引时出现error。EnumMap的速度可以和“序数索引的数组”相媲美的原因在于，EnumMap内部也使用了类似的数组，但是它对程序员隐藏了这些实现细节。集map的丰富功能、类型安全 和 数组的速度于一身。需要注意的是，EnumMap构造器需要一个其键类型的Class对象作为参数：这是一个无限制的类型令牌，提供了运行时的泛型类型信息（Item33）。
 
 > The previous program can be further shortened by using a stream (Item 45) to manage the map. Here is the simplest stream-based code that largely duplicates the behavior of the previous example:
 
