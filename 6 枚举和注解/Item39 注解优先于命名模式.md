@@ -229,18 +229,17 @@ if (m.isAnnotationPresent(ExceptionTest.class)) {
            m.invoke(null);
            System.out.printf("Test %s failed: no exception%n", m);
        } catch (Throwable wrappedExc) {
-						Throwable exc = wrappedExc.getCause();
-						int oldPassed = passed;
-						Class<? extends Exception>[] excTypes = 
-              m.getAnnotation(ExceptionTest.class).value();
-						for (Class<? extends Exception> excType : excTypes) {
-    						if (excType.isInstance(exc)) {
-        					passed++;
-									break; 
+	    Throwable exc = wrappedExc.getCause();
+	    int oldPassed = passed;
+	    Class<? extends Exception>[] excTypes = m.getAnnotation(ExceptionTest.class).value();
+	    for (Class<? extends Exception> excType : excTypes) {
+    		if (excType.isInstance(exc)) {
+        	    passed++;
+		    break; 
                 }
             }
-						if (passed == oldPassed)
-    						System.out.printf("Test %s failed: %s %n", m, exc);
+	if (passed == oldPassed)
+    	    System.out.printf("Test %s failed: %s %n", m, exc);
        }
 }
 ```
