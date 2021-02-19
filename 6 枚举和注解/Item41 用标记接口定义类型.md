@@ -6,7 +6,7 @@
 
 > You may hear it said that marker annotations (Item 39) make marker interfaces obsolete. This assertion is incorrect. Marker interfaces have two advantages over marker annotations. First and foremost, **marker interfaces define a type that is implemented by instances of the marked class; marker annotations do not.** The existence of a marker interface type allows you to catch errors at compile time that you couldn’t catch until runtime if you used a marker annotation.
 
-你可能听说过，标记注解的出现使得标记接口过时了。这种说法是不正确的，相对于标记注解，标记接口有两个优势。第一个也是最重要的一个，**标记接口定义的类型，是通过被标记类的实例来实现的，而标记注解就不是这样的。**标记接口类型的存在使得你在编译器就能发现一些错误，而如果你想用标记注解的话，这些错误，就要运行时才能发现了。
+你可能听说过，标记注解的出现使得标记接口过时了。这种说法是不正确的，相对于标记注解，标记接口有两个优势。第一个也是最重要的一个，**标记接口定义的类型，是通过被标记类的实例来实现的，而标记注解就不是这样的。** 标记接口类型的存在使得你在编译器就能发现一些错误，而如果你想用标记注解的话，这些错误，就要运行时才能发现了。
 
 > Java’s serialization facility (Chapter 6) uses the Serializable marker interface to indicate that a type is serializable. The ObjectOutputStream.writeObject method, which serializes the object that is passed to it, requires that its argument be serializable. Had the argument of this method been of type Serializable, an attempt to serialize an inappropriate object would have been detected at compile time (by type checking). Compile-time error detection is the intent of marker interfaces, but unfortunately, the ObjectOutputStream.write API does not take advantage of the Serializable interface: its argument is declared to be of type Object, so attempts to serialize an unserializable object won’t fail until runtime.
 
