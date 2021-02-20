@@ -10,7 +10,7 @@
 
 > Stream pipelines are evaluated *lazily*: evaluation doesn’t start until the terminal operation is invoked, and data elements that aren’t required in order to complete the terminal operation are never computed. This lazy evaluation is what makes it possible to work with infinite streams. Note that a stream pipeline without a terminal operation is a silent no-op, so don’t forget to include one.
 
-Stream pipelines的计算都是lazy的：要知道终止操作被调用的时候，计算才会开始。完成终止操作不需要的数据元素永远都不会被计算到。这种lazy计算机制使得无限Stream成为可能。需要注意的是，一个没有终止计算的Stream pipeline就是一个静默的无操作指令，因此千万不要忘记写终止操作。
+Stream pipelines的计算都是lazy的：要直到终止操作被调用的时候，计算才会开始。完成终止操作不需要的数据元素永远都不会被计算到。这种lazy计算机制使得无限Stream成为可能。需要注意的是，一个没有终止计算的Stream pipeline就是一个静默的无操作指令，因此千万不要忘记写终止操作。
 
 > The streams API is *fluent*: it is designed to allow all of the calls that comprise a pipeline to be chained into a single expression. In fact, multiple pipelines can be chained together into a single expression.
 
