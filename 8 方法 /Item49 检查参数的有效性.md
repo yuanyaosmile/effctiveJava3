@@ -16,7 +16,7 @@
 
 > For public and protected methods, use the Javadoc @throws tag to document the exception that will be thrown if a restriction on parameter values is violated (Item 74). Typically, the resulting exception will be IllegalArgumentException, IndexOutOfBoundsException, or NullPointerException (Item 72). Once you’ve documented the restrictions on a method’s parameters and you’ve documented the exceptions that will be thrown if these restrictions are violated, it is a simple matter to enforce the restrictions. Here’s a typical example:
 
-对于公有的，或者受宝华的方法，使用Javadoc标签@throws来用文档说明，在违背了参数规定的时候会抛出的异常。常见的异常有IllegalArgumentException, IndexOutOfBoundsException, 或者 NullPointerException（Item72）。一旦你使用文档说明了方法参数的限制，你就应该说明违背了这些限制会抛出什么异常，这样就很容易强制执行这些限制了。下面是一个典型的示例：
+对于公有的，或者受保护的方法，使用Javadoc标签@throws来用文档说明，在违背了参数规定的时候会抛出的异常。常见的异常有IllegalArgumentException, IndexOutOfBoundsException, 或者 NullPointerException（Item72）。一旦你使用文档说明了方法参数的限制，你就应该说明违背了这些限制会抛出什么异常，这样就很容易强制执行这些限制了。下面是一个典型的示例：
 
 ```java
 /**
