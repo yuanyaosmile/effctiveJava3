@@ -90,7 +90,7 @@ private static void sort(long a[], int offset, int length) {
 
 > Do not infer from this item that arbitrary restrictions on parameters are a good thing. On the contrary, you should design methods to be as general as it is practical to make them. The fewer restrictions that you place on parameters, the better, assuming the method can do something reasonable with all of the parameter values that it accepts. Often, however, some restrictions are intrinsic to the abstraction being implemented.
 
-不要从本节中得出这样的结论：对参数的任何限制都是好事。相反地，你应该把把它设计得竟可能通用，和实际情况相符。假如这个方法能对其接受的所有值都做出正确的工作，那么参数上的限制越少就越好。然后，大部分时候，一些方法上的限制对于这个抽象的实现是固有的。
+不要从本节中得出这样的结论：对参数的任何限制都是好事。相反地，你应该把把它设计得尽可能通用，和实际情况相符。假如这个方法能对其接受的所有值都做出正确的工作，那么参数上的限制越少就越好。然后，大部分时候，一些方法上的限制对于这个抽象的实现是固有的。
 
 > To summarize, each time you write a method or constructor, you should think about what restrictions exist on its parameters. You should document these restrictions and enforce them with explicit checks at the beginning of the method body. It is important to get into the habit of doing this. The modest work that it entails will be paid back with interest the first time a validity check fails.
 
