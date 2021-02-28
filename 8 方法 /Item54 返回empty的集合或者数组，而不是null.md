@@ -80,5 +80,4 @@ public Cheese[] getCheeses() {
 ```
 
 > In summary, **never return** **null** **in place of an empty array or collection.** It makes your API more difficult to use and more prone to error, and it has no performance advantages.
-
-总结一下，**永远不要返回null来代替空的数组或集合。**塔湖使得你的API很难使用，容易出错，还没有什么性能优势。
+总结一下，**永远不要返回null来代替空的数组或集合。** 它会使得你的API很难使用，容易出错，还没有什么性能优势。
