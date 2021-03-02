@@ -2,7 +2,7 @@
 
 > Suppose you want to generate random integers between zero and some upper bound. Faced with this common task, many programmers would write a little method that looks something like this:
 
-假如你想说呢过程一个0到某个上限值之间的一个随机Integer。面对这个普通的任务，很多程序员都可能会写一个下面这样的小方法：
+假如你想生成一个0到某个上限值之间的随机Integer。面对这个普通的任务，很多程序员都可能会写一个下面这样的小方法：
 
 ```java
 // Common but deeply flawed!
