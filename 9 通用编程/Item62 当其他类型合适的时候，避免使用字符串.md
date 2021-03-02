@@ -6,15 +6,15 @@ String是专门设计来表示文本的，它在这方面也确实做得很好�
 
 > **Strings are poor substitutes for other value types.** When a piece of data comes into a program from a file, from the network, or from keyboard input, it is often in string form. There is a natural tendency to leave it that way, but this tendency is justified only if the data really is textual in nature. If it’s numeric, it should be translated into the appropriate numeric type, such as int, float, or BigInteger. If it’s the answer to a yes-or-no question, it should be translated into an appropriate enum type or a boolean. More generally, if there’s an appropriate value type, whether primitive or object reference, you should use it; if there isn’t, you should write one. While this advice may seem obvious, it is often violated.
 
-**String不适合代替其他的值类型。**当程序中的数据从文件，网络，或者键盘输入的时候，通常都是String形式的。就很容易自然地让它保留这种形式。但是只有当这个数据确实是文本数据的时候，这种倾向才是合适的。如果是数值型的，它就应该被转换为合适的数值类型，比如int，float或者BigInteger。如果它是yes-or-no问题的答案，它就应该被转换为合适的枚举类型或者boolean。通常情况下，如果有一个合适的类型，不管是基本类型和式对象引用，你都应该使用它，如果没有的话，你就应该自己写一个。虽然这个建议看起来很明显，但是它经常被违反。
+**String不适合代替其他的值类型。** 当程序中的数据从文件，网络，或者键盘输入的时候，通常都是String形式的。就很容易自然地让它保留这种形式。但是只有当这个数据确实是文本数据的时候，这种倾向才是合适的。如果是数值型的，它就应该被转换为合适的数值类型，比如int，float或者BigInteger。如果它是yes-or-no问题的答案，它就应该被转换为合适的枚举类型或者boolean。通常情况下，如果有一个合适的类型，不管是基本类型和式对象引用，你都应该使用它，如果没有的话，你就应该自己写一个。虽然这个建议看起来很明显，但是它经常被违反。
 
 > **Strings are poor substitutes for enum types.** As discussed in Item 34, enums make far better enumerated type constants than strings.
 
-**String不适合代替枚举类型。**正如Item34里介绍的那样，enum比String更适合表示枚举类型常量。
+**String不适合代替枚举类型。** 正如Item34里介绍的那样，enum比String更适合表示枚举类型常量。
 
 > **Strings are poor substitutes for aggregate types.** If an entity has multiple components, it is usually a bad idea to represent it as a single string. For example, here’s a line of code that comes from a real system—identifier names have been changed to protect the guilty:
 
-**String不适合代替聚合类型。**如果一个实体拥有几个组件，通常来说，使用单个String来表示是一个非常不好的方法。比如，下面是一个来自真实系统的代码——为了避免纠纷，其标识符的名字已经被修改了：
+**String不适合代替聚合类型。** 如果一个实体拥有几个组件，通常来说，使用单个String来表示是一个非常不好的方法。比如，下面是一个来自真实系统的代码——为了避免纠纷，其标识符的名字已经被修改了：
 
 ```java
  // Inappropriate use of string as aggregate type
@@ -27,7 +27,7 @@ String是专门设计来表示文本的，它在这方面也确实做得很好�
 
 > **Strings are poor substitutes for capabilities.** Occasionally, strings are used to grant access to some functionality. For example, consider the design of a thread-local variable facility. Such a facility provides variables for which each thread has its own value. The Java libraries have had a thread-local variable facility since release 1.2, but prior to that, programmers had to roll their own. When confronted with the task of designing such a facility many years ago, several people independently came up with the same design, in which client-provided string keys are used to identify each thread-local variable:
 
-**String不适合代替能力表。**有的时候，String会用在对某种功能进行授权访问上。比如，线程本地变量机制的设计。这种机制针对每个变量，每个线程都有自己的值。Java类库中自1.2版本开始，就已经有了线程本地变量机制，但是在这之前，程序员都只能自己提供这样的机制。当很多年前，面对设计这种机制的任务的时候，有一些人都提出了同样的方法，使用客户端提供了String键来对每个局部变量进行访问。代码如下：
+**String不适合代替能力表。** 有的时候，String会用在对某种功能进行授权访问上。比如，线程本地变量机制的设计。这种机制针对每个变量，每个线程都有自己的值。Java类库中自1.2版本开始，就已经有了线程本地变量机制，但是在这之前，程序员都只能自己提供这样的机制。当很多年前，面对设计这种机制的任务的时候，有一些人都提出了同样的方法，使用客户端提供了String键来对每个局部变量进行访问。代码如下：
 
 ```java
 // Broken - inappropriate use of string as capability!
