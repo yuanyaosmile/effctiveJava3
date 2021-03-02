@@ -16,7 +16,7 @@
 
 > **The most powerful technique for minimizing the scope of a local variable is to declare it where it is first used.** If a variable is declared before it is used, it’s just clutter—one more thing to distract the reader who is trying to figure out what the program does. By the time the variable is used, the reader might not remember the variable’s type or initial value.
 
-**将局部变量作用域最小化的最有效的方法就是在第一次使用变量的地方，进行变量声明。**如果变量在使用之前声明，只会造成混乱——对于那些企图弄懂程序在干什么的读者来说，又多了一个需要分心的东西。等到用这个变量的时候，读者可能已经忘记了变量的类型和初始值了。
+**将局部变量作用域最小化的最有效的方法就是在第一次使用变量的地方，进行变量声明。** 如果变量在使用之前声明，只会造成混乱——对于那些企图弄懂程序在干什么的读者来说，又多了一个需要分心的东西。等到用这个变量的时候，读者可能已经忘记了变量的类型和初始值了。
 
 > Declaring a local variable prematurely can cause its scope not only to begin too early but also to end too late. The scope of a local variable extends from the point where it is declared to the end of the enclosing block. If a variable is declared outside of the block in which it is used, it remains visible after the program exits that block. If a variable is used accidentally before or after its region of intended use, the consequences can be disastrous.
 
@@ -24,7 +24,7 @@
 
 > **Nearly every local variable declaration should contain an initializer.** If you don’t yet have enough information to initialize a variable sensibly, you should postpone the declaration until you do. One exception to this rule concerns try- catch statements. If a variable is initialized to an expression whose evaluation can throw a checked exception, the variable must be initialized inside a try block (unless the enclosing method can propagate the exception). If the value must be used outside of the try block, then it must be declared before the try block, where it cannot yet be “sensibly initialized.” For an example, see page 283.
 
-**几乎每一个变量的声明都应该包含初始化。**如果你还不能获得确定的信息来将这个变量初始化，那么就应该延迟声明直到你能初始化为止。这个规则有一个例外，是和try-catch语句有关。如果一个变量初始化的表达式会抛出受检异常，那么这个变量就必须在try块 里面进行初始化（除非外围方法可以直接传递异常）。如果这个值必须在try块的外部使用，那么这个变量就必须在try块之前声明，但是在这个时候，这个变量还不能被“有效地初始化”。可以参照Item65中的例子。
+**几乎每一个变量的声明都应该包含初始化。** 如果你还不能获得确定的信息来将这个变量初始化，那么就应该延迟声明直到你能初始化为止。这个规则有一个例外，是和try-catch语句有关。如果一个变量初始化的表达式会抛出受检异常，那么这个变量就必须在try块 里面进行初始化（除非外围方法可以直接传递异常）。如果这个值必须在try块的外部使用，那么这个变量就必须在try块之前声明，但是在这个时候，这个变量还不能被“有效地初始化”。可以参照Item65中的例子。
 
 > Loops present a special opportunity to minimize the scope of variables. The for loop, in both its traditional and for-each forms, allows you to declare *loop variables*, limiting their scope to the exact region where they’re needed. (This region consists of the body of the loop and the code in parentheses between the for keyword and the body.) Therefore, **prefer** **for** **loops to** **while** **loops**, assuming the contents of the loop variable aren’t needed after the loop terminates.
 
