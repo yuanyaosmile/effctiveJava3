@@ -49,11 +49,12 @@ E get(int index);
 
 > Also notice the use of the Javadoc {@code} tag around the code fragment in the @throws clause. This tag serves two purposes: it causes the code fragment to be rendered in code font, and it suppresses processing of HTML markup and nested Javadoc tags in the code fragment. The latter property is what allows us to use the less-than sign (<) in the code fragment even though it’s an HTML metacharacter. To include a multiline code example in a doc comment, use a Javadoc {@code} tag wrapped inside an HTML <pre> tag. In other words, precede the code example with the characters <pre>{@code and follow it with }</pre>. This preserves line breaks in the code, and eliminates the need to escape HTML metacharacters, but *not* the at sign (@), which must be escaped if the code sample uses annotations.
 
-还需要注意，在@throw语句的代码片段中使用的javadoc标签@code。这个标签有两个作用：首先，让这个代码以代码字体的形式展示，并限制在代码片段的HTML标记和嵌套的Javadoc标签的执行；另一个作用是允许代码片段中使用小于符号（<），即使<是HTML元字符。为了在文档注释中包含几行代码，可以在一个HTML标签<pre>中使用Javadoc标签@code。换句话说，就是要在代码例子前面使用<pre>{@code ，后面使用}</pre>。这样就可以在代码中保留换行，也不需要对HTML元字符进行转换，但是@字符还是不行，如果代码中使用了注释就必须进行转换。
+还需要注意，在@throw语句的代码片段中使用的javadoc标签@code。这个标签有两个作用：首先，让这个代码以代码字体的形式展示，并限制在代码片段的HTML标记和嵌套的Javadoc标签的执行；另一个作用是允许代码片段中使用小于符号（<），即使<是HTML元字符。为了在文档注释中包含几行代码，可以在一个HTML标签&lt;pre&gt;中使用Javadoc标签@code。换句话说，就是要在代码例子前面使用&lt;pre&gt;{@code ，后面使用}&lt;/pre&gt;。这样就可以在代码中保留换行，也不需要对HTML元字符进行转换，但是@字符还是不行，如果代码中使用了注释就必须进行转换。
 
 > Finally, notice the use of the words “this list” in the doc comment. By convention, the word “this” refers to the object on which a method is invoked when it is used in the doc comment for an instance method.
 
 最后，注意文档注释中的“this list”，根据约定，如果是在实例方法上的文档注释，这个“this”就是指调用方法的对象。
+
 
 > As mentioned in Item 15, when you design a class for inheritance, you must document its *self-use patterns,* so programmers know the semantics of overriding its methods. These self-use patterns should be documented using the @implSpec tag, added in Java 8. Recall that ordinary doc comments describe the contract between a method and its client; @implSpec comments, by contrast, describe the contract between a method and its subclass, allowing subclasses to rely on implementation behavior if they inherit the method or call it via super. Here's how it looks in practice:
 
