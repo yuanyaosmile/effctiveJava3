@@ -43,7 +43,7 @@ System.out.println(1.00 - 9 * 0.10);
 
 > If you run the program, you’ll find that you can afford three pieces of candy, and you have $0.3999999999999999 left. This is the wrong answer! The right way to solve this problem is to **use** **BigDecimal**, **int, or long** **for monetary calculations**.
 
-如果你运行这个程序，你会发现你只能买3个糖果，会给你找零$0.3999999999999999。这个答案是错误的，这个问题的正确解决方法是使用**BigDecimal，int，或者long 来做货币计算。
+如果你运行这个程序，你会发现你只能买3个糖果，会给你找零$0.3999999999999999。这个答案是错误的，这个问题的正确解决方法是使用**BigDecimal，int，或者long 来做货币计算。**
 
 > Here’s a straightforward transformation of the previous program to use the BigDecimal type in place of double. Note that BigDecimal’s String constructor is used rather than its double constructor. This is required in order to avoid introducing inaccurate values into the computation [Bloch05, Puzzle 2]:
 
