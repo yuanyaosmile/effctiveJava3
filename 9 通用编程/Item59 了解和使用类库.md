@@ -73,7 +73,7 @@ public static void main(String[] args) {
 
 > The libraries are too big to study all the documentation [Java9-api], but **every programmer should be familiar with the basics of** **java.lang**, **java.util, and java.io, and their subpackages.** Knowledge of other libraries can be acquired on an as-needed basis. It is beyond the scope of this item to summarize the facilities in the libraries, which have grown immense over the years.
 
-这些标准类库已经太大了，以至于我们无法学习所有的文档 [Java9-api]，但是**每一个程序员都都应该对基本的java.lang, java.util, 和java.io, 以及其子包的内容非常熟悉。**其他类库的知识，可以在需要的时候进行学习。对类库的机制进行总结超出了本节的范围，这些年它们已经发展得特别大了。
+这些标准类库已经太大了，以至于我们无法学习所有的文档 [Java9-api]，但是**每一个程序员都都应该对基本的java.lang, java.util, 和java.io, 以及其子包的内容非常熟悉。** 其他类库的知识，可以在需要的时候进行学习。对类库的机制进行总结超出了本节的范围，这些年它们已经发展得特别大了。
 
 > Several libraries bear special mention. The collections framework and the streams library (Items 45–48) should be part of every programmer’s basic toolkit, as should parts of the concurrency utilities in java.util.concurrent. This package contains both high-level utilities to simplify the task of multithreaded programming and low-level primitives to allow experts to write their own higher- level concurrent abstractions. The high-level parts of java.util.concurrent are discussed in Items 80 and 81.
 
