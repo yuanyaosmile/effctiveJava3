@@ -126,7 +126,7 @@ for-each循环（官方称之为“增强的for循环”）解决了这些问题
 
 如果你发现你自己处在以上这些情况中，就需要使用传统的循环，并且警惕本节中介绍过的陷阱。
 
-for-each循环不仅仅可以然你迭代集合和数组，任何实现了Iterable接口的对象，for-each循环都可以进行迭代。Iterable接口只包含一个方法，下面是这个接口:
+for-each循环不仅仅可以让你迭代集合和数组，任何实现了Iterable接口的对象，for-each循环都可以进行迭代。Iterable接口只包含一个方法，下面是这个接口:
 
 ```java
 public interface Iterable<E> {
