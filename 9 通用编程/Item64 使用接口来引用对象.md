@@ -20,7 +20,7 @@ LinkedHashSet<Son> sonSet = new LinkedHashSet<>();
 
 > **If you get into the habit of using interfaces as types, your program will be much more flexible.** If you decide that you want to switch implementations, all you have to do is change the class name in the constructor (or use a different static factory). For example, the first declaration could be changed to read:
 
-**如果你养成了使用接口来作为类型的习惯，你的程序就会变得非常灵活。**如果你决定了想要换一个实现，你需要做的事情就只是修改构造器的名字（或者使用不同的静态工厂）。比如，前面的声明就可以变成下面这样：
+**如果你养成了使用接口来作为类型的习惯，你的程序就会变得非常灵活。** 如果你决定了想要换一个实现，你需要做的事情就只是修改构造器的名字（或者使用不同的静态工厂）。比如，前面的声明就可以变成下面这样：
 
 ```java
 Set<Son> sonSet = new HashSet<>();
@@ -48,7 +48,7 @@ Set<Son> sonSet = new HashSet<>();
 
 > A second case in which there is no appropriate interface type is that of objects belonging to a framework whose fundamental types are classes rather than interfaces. If an object belongs to such a *class-based framework*, it is preferable to refer to it by the relevant *base class*, which is often abstract, rather than by its implementation class. Many java.io classes such as OutputStream fall into this category.
 
-第二个没有合适的接口类型的情况是，这个对象所属的框架的基础类型是类额不是接口。如果一个对象属于这样的基于类的框架，使用相关的基础类（大部分时候都是抽象的）来引用要更好一些，而不是它的实现类型。java.io 中的很多类比如OutputStream就属于这种情况。
+第二个没有合适的接口类型的情况是，这个对象所属的框架的基础类型是类而不是接口。如果一个对象属于这样的基于类的框架，使用相关的基础类（大部分时候都是抽象的）来引用要更好一些，而不是它的实现类型。java.io 中的很多类比如OutputStream就属于这种情况。
 
 > A final case in which there is no appropriate interface type is that of classes that implement an interface but also provide extra methods not found in the interface—for example, PriorityQueue has a comparator method that is not present on the Queue interface. Such a class should be used to refer to its instances *only* if the program relies on the extra methods, and this should be very rare.
 
