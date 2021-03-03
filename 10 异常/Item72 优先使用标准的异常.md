@@ -10,7 +10,7 @@
 
 > The most commonly reused exception type is IllegalArgumentException (Item 49). This is generally the exception to throw when the caller passes in an argument whose value is inappropriate. For example, this would be the exception to throw if the caller passed a negative number in a parameter representing the number of times some action was to be repeated.
 
-最常见的重用异常类型是IllegalArgumentException（Item49）。当调用者传入的参数的值不合适的时候，通常会抛出这个异常。比如，如果调用者给一个带边某个操作执行多少次的参数传入一个负数的话，就应该抛出这个异常。
+最常见的重用异常类型是IllegalArgumentException（Item49）。当调用者传入的参数的值不合适的时候，通常会抛出这个异常。比如，如果调用者给一个表示某个操作执行多少次的参数传入一个负数的话，就应该抛出这个异常。
 
 > Another commonly reused exception is IllegalStateException. This is generally the exception to throw if the invocation is illegal because of the state of the receiving object. For example, this would be the exception to throw if the caller attempted to use some object before it had been properly initialized.
 
