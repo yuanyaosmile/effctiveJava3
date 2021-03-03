@@ -6,7 +6,7 @@ Java 提供了三种可以抛出的结构：受检异常，运行时异常，和
 
 > The cardinal rule in deciding whether to use a checked or an unchecked exception is this: **use checked exceptions for conditions from which the caller can reasonably be expected to recover.** By throwing a checked exception, you force the caller to handle the exception in a catch clause or to propagate it outward. Each checked exception that a method is declared to throw is therefore a potent indication to the API user that the associated condition is a possible outcome of invoking the method.
 
-选择使用受检异常还是非受检异常，最主要的规则是：**如果期望调用者可以对异常进行恢复，就应该使用受检异常。**抛出一个受检异常，强迫调用者必须在一个catch块里处理这个异常，或者向外抛出这个异常。每一个方法声明会抛出的受检异常，对于API的用户来说，是一种指示：意味着与异常相关的条件是调用这个方法的一种可能的结果。
+选择使用受检异常还是非受检异常，最主要的规则是：**如果期望调用者可以对异常进行恢复，就应该使用受检异常。** 抛出一个受检异常，强迫调用者必须在一个catch块里处理这个异常，或者向外抛出这个异常。每一个方法声明会抛出的受检异常，对于API的用户来说，是一种指示：意味着与异常相关的条件是调用这个方法的一种可能的结果。
 
 > By confronting the user with a checked exception, the API designer presents a mandate to recover from the condition. The user can disregard the mandate by catching the exception and ignoring it, but this is usually a bad idea (Item 77).
 
