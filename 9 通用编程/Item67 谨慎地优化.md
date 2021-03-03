@@ -39,11 +39,11 @@
 
 > **Strive to avoid design decisions that limit performance.** The components of a design that are most difficult to change after the fact are those specifying interactions between components and with the outside world. Chief among these design components are APIs, wire-level protocols, and persistent data formats. Not only are these design components difficult or impossible to change after the fact, but all of them can place significant limitations on the performance that a system can ever achieve.
 
-**坚持避免限制性能的设计决策。**在设计完成后最难以改变的组件是那些需要和外部世界以及组件间进行交互的指定的组件。这些设计组件主要包括API，交互层协议，和永久数据格式。在设计完成后，这些设计不仅仅很难或者不可能修改，并且他们还可能对系统可以达到的性能有一定的限制。
+**坚持避免限制性能的设计决策。** 在设计完成后最难以改变的组件是那些需要和外部世界以及组件间进行交互的指定的组件。这些设计组件主要包括API，交互层协议，和永久数据格式。在设计完成后，这些设计不仅仅很难或者不可能修改，并且他们还可能对系统可以达到的性能有一定的限制。
 
 > **Consider the performance consequences of your API design decisions.** Making a public type mutable may require a lot of needless defensive copying (Item 50). Similarly, using inheritance in a public class where composition would have been appropriate ties the class forever to its superclass, which can place artificial limits on the performance of the subclass (Item 18). As a final example, using an implementation type rather than an interface in an API ties you to a specific implementation, even though faster implementations may be written in the future (Item 64).
 
-**在设计API的时候要考虑性能后果。**使用公有可变类型可能需要大量的不必要的保护性拷贝（Item50）。同样地，在公有类中使用继承，其构成可能永远和它的父类绑定在一起了，这样可能会给子类的性能带来人为的限制（Item18）。最后一个例子，在API中使用实现类型而不是接口类型，会让你和某个特定的实现绑定在一起了，即使在未来已经写了更加快速的实现（Item64）。
+**在设计API的时候要考虑性能后果。** 使用公有可变类型可能需要大量的不必要的保护性拷贝（Item50）。同样地，在公有类中使用继承，其构成可能永远和它的父类绑定在一起了，这样可能会给子类的性能带来人为的限制（Item18）。最后一个例子，在API中使用实现类型而不是接口类型，会让你和某个特定的实现绑定在一起了，即使在未来已经写了更加快速的实现（Item64）。
 
 > The effects of API design on performance are very real. Consider the getSize method in the java.awt.Component class. The decision that this performance- critical method was to return a Dimension instance, coupled with the decision that Dimension instances are mutable, forces any implementation of this method to allocate a new Dimension instance on every invocation. Even though allocating small objects is inexpensive on a modern VM, allocating millions of objects needlessly can do real harm to performance.
 
@@ -63,11 +63,11 @@ API设计对性能的影响是真实存在的。比如java.awt.Component类的ge
 
 > Recall that Jackson’s two rules of optimization were “Don’t do it,” and “(for experts only). Don’t do it yet.” He could have added one more: **measure performance before and after each attempted optimization.** You may be surprised by what you find. Often, attempted optimizations have no measurable effect on performance; sometimes, they make it worse. The main reason is that it’s difficult to guess where your program is spending its time. The part of the program that you think is slow may not be at fault, in which case you’d be wasting your time trying to optimize it. Common wisdom says that programs spend 90 percent of their time in 10 percent of their code.
 
-回顾一下Jackson的两条关于优化的规则：“不要优化” 和“（只针对专家），还是不要优化”。它还可以增加一条：**在每次进行优化的前后，都进行性能测试。**你可能会被得到的结果吓到。通常，试图做的优化并不能给性能带来可测量的影响；有的还是，还会更糟糕。主要的原因是，很难才出程序把它的时间都花在哪里了。你认为程序中比较慢的部分，可能并不慢，而你还浪费了时间去试图优化它。大多数人认为“程序在10%的代码上花了90%的时间”。
+回顾一下Jackson的两条关于优化的规则：“不要优化” 和“（只针对专家），还是不要优化”。它还可以增加一条：**在每次进行优化的前后，都进行性能测试。** 你可能会被得到的结果吓到。通常，试图做的优化并不能给性能带来可测量的影响；有的还是，还会更糟糕。主要的原因是，很难才出程序把它的时间都花在哪里了。你认为程序中比较慢的部分，可能并不慢，而你还浪费了时间去试图优化它。大多数人认为“程序在10%的代码上花了90%的时间”。
 
 > Profiling tools can help you decide where to focus your optimization efforts. These tools give you runtime information, such as roughly how much time each method is consuming and how many times it is invoked. In addition to focusing your tuning efforts, this can alert you to the need for algorithmic changes. If a quadratic (or worse) algorithm lurks inside your program, no amount of tuning will fix the problem. You must replace the algorithm with one that is more efficient. The more code in the system, the more important it is to use a profiler. It’s like looking for a needle in a haystack: the bigger the haystack, the more useful it is to have a metal detector. Another tool that deserves special mention is jmh, which is not a profiler but a *microbenchmarking framework* that provides unparalleled visibility into the detailed performance of Java code [JMH].
 
-性能剖析工具可以很好的帮助你选择优化的重点。这些工具可以给你提供运行时信息，大概就是每个方法执行需要的时间和方法调用的次数。除了确定优化的重点以外，还可以提示你可能有换算法的必要。如果你的程序隐藏着一个平方级别（甚至更糟糕）的算法，进行调整就没什么用了，你必须要使用另外一个高效的算法来替代它。一个系统的代码越多，你就越有必要使用性能剖析攻击。就像是在一个干草堆里找一根针一样：这个干草堆越大，金属探测仪就越有用。另外一个需要特别关注的工具是jmh，它不是一个性能剖析工具，而是一个微基准测试框架，可以给Java代码的性能细节提供无比的可见性。
+性能剖析工具可以很好的帮助你选择优化的重点。这些工具可以给你提供运行时信息，大概就是每个方法执行需要的时间和方法调用的次数。除了确定优化的重点以外，还可以提示你可能有换算法的必要。如果你的程序隐藏着一个平方级别（甚至更糟糕）的算法，进行调整就没什么用了，你必须要使用另外一个高效的算法来替代它。一个系统的代码越多，你就越有必要使用性能剖析工具。就像是在一个干草堆里找一根针一样：这个干草堆越大，金属探测仪就越有用。另外一个需要特别关注的工具是jmh，它不是一个性能剖析工具，而是一个微基准测试框架，可以给Java代码的性能细节提供无比的可见性。
 
 > The need to measure the effects of attempted optimization is even greater in Java than in more traditional languages such as C and C++, because Java has a weaker *performance model*: The relative cost of the various primitive operations is less well defined. The “abstraction gap” between what the programmer writes and what the CPU executes is greater, which makes it even more difficult to reliably predict the performance consequences of optimizations. There are plenty of performance myths floating around that turn out to be half-truths or outright lies.
 
