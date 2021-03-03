@@ -18,7 +18,7 @@ try { ...
 
 > There are situations where it is appropriate to ignore an exception. For example, it might be appropriate when closing a FileInputStream. You haven’t changed the state of the file, so there’s no need to perform any recovery action, and you’ve already read the information that you need from the file, so there’s no reason to abort the operation in progress. It may be wise to log the exception, so that you can investigate the matter if these exceptions happen often. **If you choose to ignore an exception, the** **catch** **block should contain a comment explaining why it is appropriate to do so, and the variable should be named** **ignored:**
 
-在一些场景下，忽略异常也是合适的。比如，当我们关闭一个FileInputStream。如果你还没有改变文件的状态，那么就没有必要执行任何恢复操作，如果你已经从文件里读取了你需要的信息，那么也就没有必要终止正在进行的操作。最明智的方法就是记录这个异常，所以你就可以调查这些异常是否发生。**如果你选择忽略了异常，那么这个catch块包含一句注释，解释为什么可以忽略，并且这个变量的名字应该命名为ignored。**如下：
+在一些场景下，忽略异常也是合适的。比如，当我们关闭一个FileInputStream。如果你还没有改变文件的状态，那么就没有必要执行任何恢复操作，如果你已经从文件里读取了你需要的信息，那么也就没有必要终止正在进行的操作。最明智的方法就是记录这个异常，所以你就可以调查这些异常是否发生。**如果你选择忽略了异常，那么这个catch块包含一句注释，解释为什么可以忽略，并且这个变量的名字应该命名为ignored。** 如下：
 
 ```java
 Future<Integer> f = exec.submit(planarMap::chromaticNumber); int numColors = 4; 
